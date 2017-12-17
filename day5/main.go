@@ -36,6 +36,7 @@ func readJumps(filename string) []int {
 	if err != nil {
 		panic(err)
 	}
+	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	jumps := []int{}
 	for scanner.Scan() {

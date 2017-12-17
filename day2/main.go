@@ -14,6 +14,7 @@ func readFile(filename string) [][]int {
 	if err != nil {
 		panic(err)
 	}
+	defer file.Close()
 	reader := csv.NewReader(file)
 	reader.Comma = '\t'
 	matrix := [][]int{}

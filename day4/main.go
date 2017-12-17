@@ -34,6 +34,7 @@ func main() {
 		panic(err)
 	}
 	defer file.Close()
+
 	scanner := bufio.NewScanner(file)
 	count := 0
 	for scanner.Scan() {

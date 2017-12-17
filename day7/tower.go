@@ -25,6 +25,7 @@ func readFile(filename string) map[string]*Node {
 	if err != nil {
 		panic(err)
 	}
+	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {

@@ -129,6 +129,8 @@ func readFile(filename string) []string {
 	if err != nil {
 		panic(err)
 	}
+	defer file.Close()
+
 	scanner := bufio.NewScanner(file)
 	result := []string{}
 	for scanner.Scan() {
