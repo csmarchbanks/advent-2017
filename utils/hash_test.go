@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"reflect"
@@ -18,7 +18,7 @@ func TestReverseSubSlice(t *testing.T) {
 		{[]byte{4, 3, 0, 1, 2}, 1, 5, []byte{3, 4, 2, 1, 0}},
 	}
 	for _, tc := range tcs {
-		ReverseSubSlice(tc.slice, tc.start, tc.length)
+		reverseSubSlice(tc.slice, tc.start, tc.length)
 		if !reflect.DeepEqual(tc.slice, tc.result) {
 			t.Errorf("Result slice: %v, expected %v\n", tc.slice, tc.result)
 		}
